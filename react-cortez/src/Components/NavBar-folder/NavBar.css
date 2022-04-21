@@ -1,0 +1,33 @@
+.navContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color:red;
+}
+
+.nav{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+.subtitle{
+    color: white;
+}
+
+.navList{
+    list-style-type: none;
+    color: white;
+
+}
+
+.navList a{
+    padding-left: 10px;
+    
+}
+
+.navList a:hover{
+    color: pink;
+}
