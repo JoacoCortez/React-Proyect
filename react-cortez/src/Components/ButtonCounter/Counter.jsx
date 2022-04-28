@@ -16,7 +16,7 @@ function ItemCount({stock, initial, onAdd}){
 
     function handleMinusButton(){
 
-        if(count > 0){
+        if(count > initial){
 
             setCount(count - 1)
         }

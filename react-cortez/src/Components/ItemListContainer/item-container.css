@@ -1,4 +1,6 @@
-.list{
-    text-align: center;
-    background-color: bisque;
+.item-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
