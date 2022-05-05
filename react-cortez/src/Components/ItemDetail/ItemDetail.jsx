@@ -16,6 +16,9 @@ function ItemDetail({item}){
                 <p className='text'>
                     {item?.price}
                 </p>
+                <button className="add">
+                    Detalles
+                </button>
             </div>
 
             </div>
