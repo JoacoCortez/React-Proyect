@@ -15,7 +15,7 @@ function Item ({item}){
                     {item?.price}
                 </p>
                 <Link to={'/item/'+ item?.id}>
-                    <button className="add">
+                    <button className="details">
                         Detalles
                     </button>
                 </Link>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "./CounterStyle.css";
-
+import { Link } from 'react-router-dom';
 
 function ItemCount({stock, initial, onAdd}){
 
@@ -29,7 +29,11 @@ function ItemCount({stock, initial, onAdd}){
                 <input readOnly value= {count}/>
                 <button onClick={ () => handlePlusButton()}>+</button>
             </div>
-            <button className="addToCart" onClick={() =>(count <= stock) && onAdd()}>Agregar al carrito</button>
+            <Link to={"/cart"}>
+                <button className="addToCart" onClick={() =>(count <= stock) && onAdd(count)}>
+                    Añadir al carrito
+                </button>
+            </Link>    
         </div>
     )
 
