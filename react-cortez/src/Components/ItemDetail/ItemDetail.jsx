@@ -1,21 +1,25 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 // import Item from '../Item/Item';
 import './ItemDetail.css';
 import ItemCount from '../ButtonCounter/Counter';
-
+import CartContext from '../../Store/Cart-context';
+import { Link } from 'react-router-dom';
 
 
 function ItemDetail({item}){
 
-    const [productQuantity, setProductQuantity] = useState(null);
-
+    const cartCtx = useContext(CartContext);
+    
+    
+    
     function addHandler(quantityToAdd){
 
-        setProductQuantity(quantityToAdd)
+        cartCtx.addProduct({quantity: quantityToAdd, ...item});
 
+    }
        
         
-    }
+
 
     
     
@@ -31,13 +35,16 @@ function ItemDetail({item}){
                     {item?.price}
                 </p>
             </div>
-                {productQuantity ?
-                    
-                    alert(`añadiste ${productQuantity} items`):
-                    
-                    <ItemCount initial={0} stock={10} onAdd={addHandler}/> 
-                    
-                }
+                <button onClick={() =>console.log(cartCtx.addProduct(item.id))}>Agregar producto</button>
+                
+                <button onClick={() =>cartCtx.deleteProduct(item.id)}>Borrar producto</button>
+                
+                <button onClick={() =>cartCtx.clear()}>Limpiar carrito</button>
+                
+                <button onClick={() =>console.log(cartCtx.duplicated(item.id))}>Duplicado</button>
+
+                <ItemCount initial={0} stock={10} onAdd={addHandler}/> 
+            
 
             </div>
             
