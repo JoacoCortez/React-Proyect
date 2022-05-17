@@ -1,15 +1,15 @@
 import './App.css';
 import NavBar from './Components/NavBar-folder/NavBar';
-import ItemListContainer from './Components/ItemListContainer';
+import ItemListContainer from './Components/ItemListContainer/index'
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 import {Routes, Route} from 'react-router-dom';
-import Cart from './Pages/Cart/Cart';
+import Cart from './pages/Cart/Cart';
 
 
 function App() {
   return (
     <div className="App">
-        <header>
+        
           <NavBar/>
             <Routes>
                   <Route path='/' element={<ItemListContainer/>}/>
@@ -20,18 +20,7 @@ function App() {
           
           
           
-        </header>
-        <body>
-          <main>
-            {/* <ItemListContainer greeting='Hello world'>
-
-            </ItemListContainer> */}
-
-            
-       
-
-          </main>
-        </body>
+        
     </div>
     
   );
