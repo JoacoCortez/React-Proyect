@@ -8,7 +8,9 @@ function NavBar (props){
     return(
         <div className="navContainer">
             <div className="nav">
-            <Link to={"/"}><img src="./birraencasa_white.png" className='logo' alt="logo"/></Link>
+            <Link to={"/"}>
+                <img src="./birraencasa_white.png" className='logo' alt="logo"/>
+            </Link>
                 <ul className="navList">
                     <li><Link to={'/Category/IPA'}>IPA</Link></li>
                     <li><Link to={'/Category/Roja'}>Roja</Link></li>

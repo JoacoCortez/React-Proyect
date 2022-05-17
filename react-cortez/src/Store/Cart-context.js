@@ -10,7 +10,7 @@ const CartContext = createContext({
 });
 
 
-export const CartContextProvider = ({children}) =>{
+const CartContextProvider = ({children}) =>{
 
     const [productList, setProductList] = useState([])
 
@@ -76,3 +76,5 @@ export const CartContextProvider = ({children}) =>{
 }
 
 export default CartContext;
+
+export {CartContextProvider};

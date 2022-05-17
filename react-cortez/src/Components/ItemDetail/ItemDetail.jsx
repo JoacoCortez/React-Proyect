@@ -35,7 +35,9 @@ function ItemDetail({item}){
                     {item?.price}
                 </p>
             </div>
-                <button onClick={() =>console.log(cartCtx.addProduct(item.id))}>Agregar producto</button>
+                <ItemCount initial={0} stock={10} onAdd={addHandler}/>
+
+                <button onClick={() => console.log(cartCtx.products)} >Imprimir carrito</button>
                 
                 <button onClick={() =>cartCtx.deleteProduct(item.id)}>Borrar producto</button>
                 
@@ -43,8 +45,11 @@ function ItemDetail({item}){
                 
                 <button onClick={() =>console.log(cartCtx.duplicated(item.id))}>Duplicado</button>
 
-                <ItemCount initial={0} stock={10} onAdd={addHandler}/> 
-            
+                {cartCtx.products.length &&
+                    <button onClick={() => console.log(cartCtx)}>
+                        <Link to="/cart">Ir al carrito</Link>
+                    </button>
+                }   
 
             </div>
             
