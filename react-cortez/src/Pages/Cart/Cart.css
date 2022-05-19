@@ -1,0 +1,47 @@
+.cart{
+    margin: 30px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.cart-items{
+    
+}
+
+
+
+
+.emptyCart{
+
+    text-align: center;
+    color: white;
+    padding-top: 3rem;
+}
+
+.total{
+    text-align: center;
+    color: white;
+    margin: 30px;
+}
+
+.endBuy{
+    margin-left: 890px;
+    padding: 5px;
+    background-color:#6930C3;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.endBuy a{
+    text-decoration: none;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 20px;
+    
+    color: white;
+    
+    
+
+}

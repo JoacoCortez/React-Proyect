@@ -68,9 +68,12 @@ const CartContextProvider = ({children}) =>{
     }
 
     const getTotalPrice = () => {
+        console.log("??¡?¡?¡?¡?")
         return productList.reduce((total, value) => {
             return total + value.price*value.quantity
+            
         }, 0)
+        
     }
 
 

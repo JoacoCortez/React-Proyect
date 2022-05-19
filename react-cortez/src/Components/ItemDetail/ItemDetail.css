@@ -18,7 +18,7 @@
     margin-bottom: 50px;
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 0.25rem;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.466);
+    box-shadow: 0 4px 8px 0 rgba(27, 26, 26, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.466);
     background-color: #6930C3;
 }
 
@@ -26,8 +26,7 @@
 .detailImg{
     max-width: 500px;
     max-height: 600px;
-    padding-top: 20px;
-
+    
 }
 
 

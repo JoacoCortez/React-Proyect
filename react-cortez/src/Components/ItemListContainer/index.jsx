@@ -9,9 +9,9 @@ function bringProducts(Category){
     const productsReturn = new Promise ((resolve,reject) =>{
 
         const productList = [
-            {id: 1, name:"Cerveza IPA Andes", stock: 3, description:"Lata de 473cc", price: "$200", category:"IPA", img: "https://elbaronline.com.ar/wp-content/uploads/2021/03/Andes-Ipa-473ml-1-1024x1024.jpg"},
-            {id: 2, name:"Cerveza roja Andes", stock: 3, description:"Lata de 473cc", price: "$180", category:"Roja", img: "https://elbaronline.com.ar/wp-content/uploads/2021/03/Andes-Roja-473ml-1.jpg"},
-            {id: 3, name:"Cerveza rubia Andes", stock: 3, description:"Lata de 473cc", price: "$150", category:"Rubia", img: "https://elbaronline.com.ar/wp-content/uploads/2021/03/Andes-Rubia-473ml-1-1024x1024.jpg"}
+            {id: 1, name:"Cerveza IPA Andes", stock: 3, description:"Lata de 473cc", price: "200", category:"IPA", img: "https://elbaronline.com.ar/wp-content/uploads/2021/03/Andes-Ipa-473ml-1-1024x1024.jpg"},
+            {id: 2, name:"Cerveza roja Andes", stock: 3, description:"Lata de 473cc", price: "180", category:"Roja", img: "https://elbaronline.com.ar/wp-content/uploads/2021/03/Andes-Roja-473ml-1.jpg"},
+            {id: 3, name:"Cerveza rubia Andes", stock: 3, description:"Lata de 473cc", price: "150", category:"Rubia", img: "https://elbaronline.com.ar/wp-content/uploads/2021/03/Andes-Rubia-473ml-1-1024x1024.jpg"}
         ]
 
 

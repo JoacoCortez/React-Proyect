@@ -12,7 +12,7 @@ function Item ({item}){
                     {item?.description}
                 </p>
                 <p className='text'>
-                    {item?.price}
+                    ${item?.price}
                 </p>
                 <Link to={'/item/'+ item?.id}>
                     <button className="details">

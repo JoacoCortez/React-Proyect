@@ -32,7 +32,7 @@ function ItemDetail({item}){
                     {item?.extraInfo}
                 </p>
                 <p className='price'>
-                    {item?.price}
+                    ${item?.price}
                 </p>
             </div>
                 <ItemCount initial={0} stock={item.stock} onAdd={addHandler}/>

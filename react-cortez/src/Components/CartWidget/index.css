@@ -1,6 +1,16 @@
 .cartIcon{
     
-    margin-top: 6px;
+    display: flex;
+    align-items: center;
     font-size: 40px;
     
+}
+
+
+.cart-bubble{
+    
+    position: relative;
+    bottom: 42%;
+    right: 16%;
+   
 }
