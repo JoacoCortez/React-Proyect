@@ -3,26 +3,19 @@ import './item-container.css';
 import ItemCount from '../ButtonCounter/Counter';
 import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
+import { collection, getDocs, getFirestore, query, where, limit} from 'firebase/firestore';
 
-function bringProducts(Category){
+function bringProducts(category){
+    
+    const db = getFirestore();
 
-    const productsReturn = new Promise ((resolve,reject) =>{
-
-        const productList = [
-            {id: 1, name:"Cerveza IPA Andes", stock: 3, description:"Lata de 473cc", price: "200", category:"IPA", img: "https://elbaronline.com.ar/wp-content/uploads/2021/03/Andes-Ipa-473ml-1-1024x1024.jpg"},
-            {id: 2, name:"Cerveza roja Andes", stock: 3, description:"Lata de 473cc", price: "180", category:"Roja", img: "https://elbaronline.com.ar/wp-content/uploads/2021/03/Andes-Roja-473ml-1.jpg"},
-            {id: 3, name:"Cerveza rubia Andes", stock: 3, description:"Lata de 473cc", price: "150", category:"Rubia", img: "https://elbaronline.com.ar/wp-content/uploads/2021/03/Andes-Rubia-473ml-1-1024x1024.jpg"}
-        ]
-
-
-        const productsFiltered = Category ? productList.filter(item => item.category === Category) : productList;
-
-        setTimeout(()=>{
-            resolve(productsFiltered);
-
-        }, 2000);
-    })   
-    return productsReturn;  
+    const itemsCollection = collection(db, "items");
+    
+    const q = category && query(
+        itemsCollection,
+        where("category", "==", category)
+    )
+  return getDocs(q || itemsCollection)
 }
 
 
@@ -38,10 +31,40 @@ const ItemListContainer = ({greeting}) =>{
     
     useEffect(()=>{
         
+        // const db =getFirestore();
+
+
+        // const itemCollection = collection(db, "items");
+
+        // const q = query(
+        //     itemCollection,
+        //     where('category', '==', category)
+        // )
+        
+        // getDocs(q)
+  
+        
+        // .then((snapshot) =>{
+        //         console.log(snapshot.docs.map(doc => {
+        //             return {...doc.data(), id: doc.id}
+        //         }))
+        //     })
+        //     .catch(err =>{
+
+        //         console.log(err)
+        //     })
+        
+        
+        
+        
+        
+        
+        
         bringProducts(categoryId)
-        .then((res) =>{
-            setProducts(res)
-        });
+            .then((snapshot) =>{
+                setProducts(snapshot.docs.map(doc => {return{...doc.data(), id: doc.id} }))
+            
+            });
     },[categoryId])
     
     return(

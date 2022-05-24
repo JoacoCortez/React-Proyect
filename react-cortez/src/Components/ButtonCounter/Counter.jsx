@@ -8,6 +8,7 @@ function ItemCount({stock, initial, onAdd}){
 
     function handlePlusButton (){
 
+       
         if (count < stock){
 
            setCount(count + 1)
