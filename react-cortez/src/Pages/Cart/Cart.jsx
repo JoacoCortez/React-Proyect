@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import CartItem from "../../Components/CartItem/CartItem";
 import './Cart.css'
 import CartContext from "../../Store/Cart-context";
+import Checkout from "../Checkout/Checkout";
 
 
 function Cart() {
@@ -21,7 +22,7 @@ function Cart() {
                     <p>Precio total: ${cartCtx.getTotalPrice()}</p>
                 </h2>
                 <button className="endBuy">
-                    <Link to="/">
+                    <Link to={"/Checkout"}>
                         Confirmar
                     </Link>
                 </button>
