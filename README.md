@@ -1,6 +1,10 @@
 # Ecommerce con React Js
 
+
 Este es mi primer proyecto realizado con React Js, está basado en una página de delivery de bebidas alcoholicas
+
+
+
 
 
 
@@ -8,7 +12,7 @@ Este es mi primer proyecto realizado con React Js, está basado en una página d
 https://user-images.githubusercontent.com/92959617/172516669-d3fdd3ec-6901-49bf-a156-4040b5cb1dc9.mp4
 
 
-//espacio para el Gif
+
 
 
 
