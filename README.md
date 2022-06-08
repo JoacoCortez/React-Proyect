@@ -1,10 +1,18 @@
 # Ecommerce con React Js
 
+
 Este es mi primer proyecto realizado con React Js, está basado en una página de delivery de bebidas alcoholicas
 
 
 
-//espacio para el Gif
+
+
+
+
+https://user-images.githubusercontent.com/92959617/172516669-d3fdd3ec-6901-49bf-a156-4040b5cb1dc9.mp4
+
+
+
 
 
 
@@ -29,7 +37,7 @@ npm start
 
 Se puede clonar el repositorio, ingresando a una terminal y ejecutando:
 
-git clone https://github.com/rod77/Ecommerce_ejemplo.git
+git clone https://github.com/JoacoCortez/React-Proyect.git
 
 Luego continuar con el paso 3 de la otra forma
 
