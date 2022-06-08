@@ -3,8 +3,8 @@ import NavBar from './Components/NavBar-folder/NavBar';
 import ItemListContainer from './Components/ItemListContainer/index'
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 import {Routes, Route} from 'react-router-dom';
-import Cart from './pages/Cart/Cart';
-import Checkout from './pages/Checkout/Checkout';
+import Cart from './Pages/Cart/Cart';
+import Checkout from './Pages/Checkout/Checkout';
 
 
 function App() {

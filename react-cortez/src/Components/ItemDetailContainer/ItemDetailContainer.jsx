@@ -1,39 +1,44 @@
 import React, {useState, useEffect} from 'react';
-import './ItemDetailContainer.css';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom';
-import {doc, getDoc, getFirestore } from 'firebase/firestore';
-
-function getProduct(id){
-    const db = getFirestore();
-
-    const itemRef = doc(db, "items", id)
-   
-    return getDoc(itemRef)
-}
-
+import {doc, getDoc} from 'firebase/firestore';
+import db from '../../Services/Firebase';
+import Spinner from '../Spinner/Spinner';
 
 function ItemDetailContainer() {
 
     const[item, setItem] = useState({});
     const { Id } = useParams();
+    const [load, setLoad] = useState(false)
 
     useEffect(()=>{
-
+        
         getProduct(Id)
             .then((snapshot)=>{
-
+                setLoad(false)
                 setItem({...snapshot.data(), id: snapshot.id});
             })
+            
     },[Id])
+    
+    
+    function getProduct(id){
+
+        setLoad(true)   
+        
+        const itemRef = doc(db, "items", id)
+       
+        return getDoc(itemRef)
+    }
+    
     
     return(
         <>
-            <ItemDetail item={item}/>
+            {load ? <Spinner/> :<ItemDetail item={item}/>}
         </>
     )
-
-
 }
+
+
 
 export default ItemDetailContainer;

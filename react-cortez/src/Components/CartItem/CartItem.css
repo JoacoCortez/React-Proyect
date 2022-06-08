@@ -20,7 +20,6 @@
 }
 
 .item-title{
-
     color: white;
 }
 
@@ -38,8 +37,6 @@
     position: relative;
     bottom: 80%;
     right: 99%;
-   
-    
 }
 
 .bubble-close{
@@ -47,5 +44,5 @@
     height: 0%;
     position: relative;
     bottom: 87%;
-    left: 20%;
+    left: 19%;
 }

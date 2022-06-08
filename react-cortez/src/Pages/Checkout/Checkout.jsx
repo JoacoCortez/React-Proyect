@@ -2,7 +2,8 @@ import React, { useContext, useState } from "react";
 import CartContext from "../../Store/Cart-context";
 import { collection, addDoc } from "firebase/firestore";
 import db from "../../Services/Firebase";
-
+import Spinner from "../../Components/Spinner/Spinner";
+import "./Checkout.css";
 
 
 const Checkout = () =>{
@@ -13,23 +14,17 @@ const [load, setLoad] = useState(false)
 
 const [orderID, setOrderID] = useState()
 
-const [buyer, setBuyer] = useState({
-    
-    Name: " ",
-    Email: " ",
-    Adress: " " 
-
-})
+const [buyer, setBuyer] = useState({})
 
 const {Name, Email, Adress} = buyer
 
 
 const handleInputChange = (e) =>{
-
-    setBuyer({
+    
+    setBuyer(({
         ...buyer, [e.target.name]: e.target.value
 
-    })
+    }))
 
 }
 
@@ -63,65 +58,76 @@ const handleSubmit = (e) =>{
         id: e.id,
         name: e.name,
         price: e.price,
-        amount: e.amount
+        quantity: e.quantity
     }})
 
-    const total = getTotalPrice()
+    const total = cartCtx.getTotalPrice()
 
     const data ={buyer, items, total}
+
+    console.log("data",data) 
 
     generateOrder(data)
 }
 
 return(
     <>
-        <h2>Finalizando tu compra!</h2>
-        
-        <div className="cheackout-container">
-
+        <div className="checkout-container">
             {load ? <Spinner />
                 : (!orderID &&
-            
-                    <form onSubmit={handleSubmit}>
+                    <>
+                        <h2 className="subtitle-checkout">Finalizando tu compra!</h2>  
+                        <form onSubmit={handleSubmit}>
+                            
+                            <label htmlFor="name">Tu nombre:</label>
+                            
+                            <input
+                                className="input-form"
+                                type = "text"
+                                name = "name"
+                                value= {Name}
+                                onChange = {handleInputChange}
+                                required
+                            />
+                            
+                            <label htmlFor="email">Tu mail:</label>
+                            
+                            <input
+                                className="input-form"
+                                type = "text"
+                                name = "email"
+                                value = {Email}
+                                onChange = {handleInputChange}
+                                required        
+                            />
+                            
+                            <label htmlFor="adress">Tu dirección:</label>
+                            
+                            <input
+                                className="input-form"
+                                type = "text"
+                                name = "adress"
+                                value = {Adress}
+                                onChange = {handleInputChange}
+                                required       
+                            />
 
-                        <input
-                            type = "text"
-                            name = "name"
-                            value= {Name}
-                            onChange = {handleInputChange}
-                            required
-                        />
-
-                        <input
-                            type = "text"
-                            name = "email"
-                            value = {Email}
-                            onChange = {handleInputChange}
-                            required        
-                        />
-
-                        <input
-                            type = "text"
-                            name = "adress"
-                            value = {Adress}
-                            onChange = {handleInputChange}
-                            required       
-                        />
-
-                        <input
-                            type = "submit"
-                            value = "Finalizar Compra"
-                        />
-                    
-                    </form>
+                            <input
+                                className="upload"
+                                type = "submit"
+                                value = "Finalizar Compra"
+                            />
+                        
+                        </form>
+                    </>
                 )
             }
             
             {
                 orderID && (
-                    <div>
-                        <h3>Compra Finalizada con Exito</h3>
-                        <h4>{`Tu código de compra es: ${orderID}`}</h4>
+                    <div className="end-container">
+                        <h3 className="end-text">Compra Finalizada con Éxito</h3>
+                        <h4 className="end-text">{`Tu código de compra es: ${orderID}`}</h4>
                             
                     </div>
                 )

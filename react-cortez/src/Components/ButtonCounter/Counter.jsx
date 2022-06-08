@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import "./CounterStyle.css";
-import { Link } from 'react-router-dom';
 
 function ItemCount({stock, initial, onAdd}){
 
@@ -31,7 +30,7 @@ function ItemCount({stock, initial, onAdd}){
                 <button onClick={ () => handlePlusButton()}>+</button>
             </div>
             
-                <button className="addToCart" onClick={() =>(count <= stock) && onAdd(count)}>
+                <button className="addToCart" onClick={() =>(count != 0 && count <= stock) && onAdd(count)}>
                     Añadir al carrito
                 </button>
             
@@ -39,14 +38,5 @@ function ItemCount({stock, initial, onAdd}){
     )
 
 }
-
-
-
-
-
-
-
-
-
 
 export default ItemCount;

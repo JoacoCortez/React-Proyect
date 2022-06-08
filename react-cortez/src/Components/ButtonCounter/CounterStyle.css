@@ -1,5 +1,5 @@
 .cardCounter{
-
+    margin: 3%;
     border: 1px gray solid;
     border-radius: 20px;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
@@ -11,11 +11,11 @@
     align-items: center;
 }
 
-
 .cardCounter button{
     background-color: #6930C3;
     color: white;
     border: 0;
+    
     margin: 5px;
     padding: 5px;
     font-size: 28px;
@@ -23,7 +23,7 @@
 }
 
 .cardCounter button:hover{
-    color: red;
+    color: #37E2D5;
 }
 
 .cardCounter input{

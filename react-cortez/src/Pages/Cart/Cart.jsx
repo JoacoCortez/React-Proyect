@@ -16,7 +16,7 @@ function Cart() {
                 {cartCtx.products.map(p => <CartItem item={p} key={p.id} />)}
             </div>
                 {cartCtx.products.length !== 0 ?
-            <div>
+            <div className="container">
             
                 <h2 className="total">
                     <p>Precio total: ${cartCtx.getTotalPrice()}</p>

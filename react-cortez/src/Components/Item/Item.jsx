@@ -20,7 +20,6 @@ function Item ({item}){
                     </button>
                 </Link>
             </div>
-
         </div>
     )
 }

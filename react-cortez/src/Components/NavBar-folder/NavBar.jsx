@@ -1,45 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './NavBar.css';
 import CartWidget from '../CartWidget';
 import {Link} from 'react-router-dom';
-// import {getFirestore, collection, getDocs} from 'firestore/firebase';
+import logo from "../../Media/birraencasa_white.png";
 
+function NavBar (){
 
-// function getCategories(){
-
-//     const db = getFirestore();
-
-//     const itemsCollection = collection(db, "items");
-
-    
-//     return getDocs(itemsCollection)
-// }
-
-
-
-
-function NavBar (props){
-
-    // const [categories, setCategories] = useState([])
-    
-    // useEffect(()=> {
-    //     getCategories()
-    //         .then(snapshot=>{
-    //             const categories = snapshot.docs.map(doc => doc.data().category)
-    //             setCategories(categories);
-
-    //         })
-
-
-
-    // }, [])
-    
-    
     return(
         <div className="navContainer">
             <div className="nav">
             <Link to={"/"}>
-                <img src="./birraencasa_white.png" className='logo' alt="logo"/>
+                <img src= {logo} className='logo' alt="logo"/>
             </Link>
                 <ul className="navList">
                     <li><Link to={'/category/IPA'}>IPA</Link></li>
@@ -50,6 +21,7 @@ function NavBar (props){
             <CartWidget/>
         </div>
     )
+
 }
 
 export default NavBar

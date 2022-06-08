@@ -14,20 +14,16 @@ const CartWidget = () =>{
             <Link to='/Cart'>
                 <FontAwesomeIcon icon={faCartShopping}/>
             </Link>
-        {cartCtx.products.length !== 0 ?
-        
-            <div className="cart-bubble">
-                <CartCounter>
-                    {cartCtx.getCartQuantity()}
-                </CartCounter>
+            {cartCtx.products.length !== 0 ?
+            
+                <div className="cart-bubble">
+                    <CartCounter>
+                        {cartCtx.getCartQuantity()}
+                    </CartCounter>
 
-            </div>
-            : ''
-        }
-        
-        
-        
-        
+                </div>
+                : ''
+            }
         </div>
     )
 }

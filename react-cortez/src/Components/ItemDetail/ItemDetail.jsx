@@ -1,16 +1,12 @@
 import React, { useContext, useState } from 'react';
-// import Item from '../Item/Item';
 import './ItemDetail.css';
 import ItemCount from '../ButtonCounter/Counter';
 import CartContext from '../../Store/Cart-context';
 import { Link } from 'react-router-dom';
 
-
 function ItemDetail({item}){
 
     const cartCtx = useContext(CartContext);
-    
-    
     
     function addHandler(quantityToAdd){
 
@@ -18,10 +14,6 @@ function ItemDetail({item}){
 
     }
        
-        
-
-
-    
     
     return(
         <div className="itemDetail">
@@ -39,7 +31,7 @@ function ItemDetail({item}){
 
                 {cartCtx.duplicated(item.id) &&
                 
-                <button>
+                <button className='add'>
                     <Link to="/Cart">
                         Ir al carrito ({cartCtx.getCartQuantity()})
                     </Link>
@@ -47,18 +39,8 @@ function ItemDetail({item}){
                 }
 
             </div>
-            
-                
-            
-            
-               
-            
         </div>
-    
-
     )
-
-        
 }
 
 

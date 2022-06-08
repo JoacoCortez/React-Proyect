@@ -1,6 +1,7 @@
 .card{
-    margin: 50px 78px 30px 78px;
+    margin: 3% 8%;
     max-width: 260px;
+    
     
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 0.25rem;
@@ -11,21 +12,34 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    
 }
 
 .card-img{
     max-height: 260px;
+    max-width: 260px;
     object-fit: contain;
-
 }
 
 .content{
-
-
+    margin-top: 5px;
 }
 
 .text{
     color: white;
     text-align: center;
 }
+
+.details{
+    border-radius: 25px;
+    padding: 2px;
+    border: 1px;
+    cursor: pointer;
+}
+
+a{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    text-decoration: none;
+}
+

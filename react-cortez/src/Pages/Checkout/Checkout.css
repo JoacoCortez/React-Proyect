@@ -1,0 +1,46 @@
+.subtitle-checkout{
+    margin: 3%;
+    padding-left: 11%;
+
+    color: white;
+    font-size: 2.5rem;
+}
+
+form{
+    margin-left: 26%;
+    width: fit-content;
+}
+
+.input-form{
+    margin: 2%;
+}
+
+label{
+    font-size: 20px;
+    color: white;
+    padding-left: 20px;
+}
+
+.upload{
+    margin: 2% 0 0 42%;
+    padding: 5px;
+
+    font-size: 15px;
+    font-weight: bold;
+    
+    border-radius: 6px;
+    cursor: pointer;
+    background-color:#6930C3;
+    color: white;
+}
+
+.end-container{
+    margin-top: 10%;
+}
+
+.end-text{
+    margin-top: 10px;
+    text-align: center;
+
+    color: white;
+}
