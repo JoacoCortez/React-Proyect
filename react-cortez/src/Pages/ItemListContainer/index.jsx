@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import './item-container.css';
-import ItemList from '../ItemList/ItemList';
+import ItemList from '../../Components/ItemList/ItemList';
 import db from '../../Services/Firebase';
 import { useParams } from 'react-router-dom';
 import { collection, getDocs, query, where} from 'firebase/firestore';
-import Spinner from '../Spinner/Spinner';
+import Spinner from '../../Components/Spinner/Spinner';
 
 
 const ItemListContainer = () =>{
